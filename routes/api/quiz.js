@@ -22,7 +22,6 @@ router.get('/:level', auth, async (req, res) => {
 });
 
 
-
 // @route    POST api/quiz
 // @desc     Create a question
 // @access   Private
