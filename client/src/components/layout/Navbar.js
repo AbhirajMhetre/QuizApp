@@ -5,16 +5,18 @@ import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const Navbar = ({ auth: { user, isAuthenticated, loading }, logout }) => {
 
   const authLinks = (
     <ul>
-      <li>
-        <Link to="/quiz">
-          <i className="fas fa-question" />{' '}
-          <span className="hide-sm">Create Quiz</span>
-        </Link>
-      </li>
+      {user && user.email === "admin@admin.com" &&
+            <li>
+            <Link to="/quiz">
+              <i className="fas fa-question" />{' '}
+              <span className="hide-sm">Create Quiz</span>
+            </Link>
+          </li>
+      }
       <li>
         <Link to="/dashboard">
           <i className="fas fa-user" />{' '}

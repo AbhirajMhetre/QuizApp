@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
@@ -24,9 +25,6 @@ const Questions = (props) => {
     props.getQuestions( props.match.params.level );
   },[]);
 
-  // useEffect(() => {
-  //   props.GetResult(formData, props.match.params.level );
-  // },[]);
 const questions = props.question.questions;
 
   return (
@@ -37,6 +35,7 @@ const questions = props.question.questions;
         <Fragment>
           {props.question.result != null ? (
             <div className="result-card">
+              <Link className="cross-sign" to='/'>X</Link>
               <div>
               SCORE {props.question.result.result}/{props.question.result.total}
               </div>

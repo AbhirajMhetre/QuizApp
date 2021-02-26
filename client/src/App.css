@@ -615,3 +615,11 @@ button {
   float: right;
   margin-right: 20px;
 }
+
+.cross-sign {
+  float: right;
+  margin: 20px;
+  color: white;
+  width: 50px;
+  height: 50px;
+}
